@@ -1,0 +1,117 @@
+/**
+    SUITESHARE
+    TOAST
+ */
+@-webkit-keyframes toast-width-animation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes toast-width-animation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+._s-toast {
+  --s-toast-color-text: #ffffff;
+  --s-toast-color-black: #1e1e1e;
+  --s-toast-color-default: #e1e1e1;
+  --s-toast-color-info: #277da1;
+  --s-toast-color-success: #43aa8b;
+  --s-toast-color-warning: #f8961e;
+  --s-toast-color-danger: #f94144;
+  --s-toast-min-width: 250px;
+  --s-toast-max-width: 350px;
+  --s-toast-distance: 15px;
+  --s-toast-padding-x: 20px;
+  --s-toast-padding-y: 20px;
+  --s-toast-radius: 5px;
+  --s-toast-translate: 10px;
+  --s-toast-transition-time: .5s;
+  --s-toast-transition-animation: ease;
+  --s-toast-shadow-distance: 5px;
+  --s-toast-shadow-blur: 10px;
+  color: var(--s-toast-color-black);
+  background-color: var(--s-toast-color-default);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  position: fixed;
+  z-index: 9999;
+  border-radius: var(--s-toast-radius);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: var(--s-toast-shadow-distance) var(--s-toast-shadow-distance) var(--s-toast-shadow-blur) rgba(0, 0, 0, 0.25);
+  min-width: var(--s-toast-min-width);
+  max-width: var(--s-toast-max-width);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--s-toast-transition-time) var(--s-toast-transition-animation);
+}
+._s-toast * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+._s-toast-content {
+  padding: var(--s-toast-padding-y) var(--s-toast-padding-x);
+}
+._s-toast-text {
+  display: flex;
+  align-items: center;
+}
+._s-toast-text * {
+  margin: 0;
+}
+._s-toast-text *:first-child {
+  margin-right: auto !important;
+}
+._s-toast-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(0, 0) !important;
+}
+._s-toast-top {
+  top: var(--s-toast-distance);
+}
+._s-toast-bottom {
+  bottom: var(--s-toast-distance);
+}
+._s-toast-left {
+  left: var(--s-toast-distance);
+}
+._s-toast-right {
+  right: var(--s-toast-distance);
+}
+._s-toast-info {
+  color: var(--s-toast-color-default) !important;
+  background-color: var(--s-toast-color-info) !important;
+}
+._s-toast-success {
+  color: var(--s-toast-color-default) !important;
+  background-color: var(--s-toast-color-success) !important;
+}
+._s-toast-warning {
+  color: var(--s-toast-color-default) !important;
+  background-color: var(--s-toast-color-warning) !important;
+}
+._s-toast-danger {
+  color: var(--s-toast-color-default) !important;
+  background-color: var(--s-toast-color-danger) !important;
+}
+._s-toast-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
