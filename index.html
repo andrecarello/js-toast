@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/styles.css" />
+  </head>
+  <body>
+    <button id="button">Abrir toast</button>
+    <!-- <script type="module" src="dist/index.js" ></script> -->
+    <script type="module">
+      import Toast from "/src/index.js";
+      const button = document.getElementById("button");
+      button.addEventListener("click", function () {
+        Toast("success", "message", { time: 500000 });
+      });
+      // aqui tem um truque para adicionar o evento de click, não vou colocar :)
+      // ::code::
+      // ...
+      //   toast("success", "message");
+      // ...
+    </script>
+  </body>
+</html>

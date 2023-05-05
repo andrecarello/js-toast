@@ -1,0 +1,80 @@
+@keyframes toast-width-animation {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+.toast {
+  --text: #ffffff;
+  --danger: #f43f5e;
+  --success: #22c55e;
+  --min-width: 250px;
+  --max-width: 350px;
+  --distance: 15px;
+  --padding-x: 25px;
+  --padding-y: 15px;
+  --radius: 5px;
+  --translate: 10px;
+  --transition-time: 0.5s;
+  --transition-animation: ease;
+
+  --shadow-distance: 5px;
+  --shadow-blur: 10px;
+
+  position: fixed;
+  z-index: 9999;
+  padding: var(--padding-y) var(--padding-x);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-distance) var(--shadow-distance) var(--shadow-blur) rgba(0, 0, 0, 0.25);
+
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(var(--translate));
+
+  transition: all var(--transition-time) var(--transition-animation);
+}
+.toast.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.toast.top {
+  top: var(--distance);
+}
+.toast.left {
+  left: var(--distance);
+}
+.toast.right {
+  right: var(--distance);
+}
+.toast.bottom {
+  bottom: var(--distance);
+}
+.toast.success {
+  background-color: var(--success);
+  color: var(--text);
+}
+.toast.error {
+  background-color: var(--danger);
+  color: var(--text);
+}
+
+.toast .toast-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
